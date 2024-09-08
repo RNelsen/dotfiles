@@ -24,7 +24,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+if [[ -n $SSH_CONNECTION ]]; then 
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+else
+  ZSH_THEME="robbyrussell"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -92,7 +96,8 @@ plugins=()
 
 
 source $ZSH/oh-my-zsh.sh
-
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_THEME_TERM_TAB_TITLE_IDLE=""%n@%m:%~
 
@@ -141,7 +146,7 @@ ZSH_THEME_TERM_TAB_TITLE_IDLE=""%n@%m:%~
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat='bat'
-export EDITOR=nvim
+export EDITOR=/usr/bin/nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

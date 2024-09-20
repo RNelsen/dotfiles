@@ -24,10 +24,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-if [[ -n $SSH_CONNECTION ]]; then 
+if [[ -n $SSH_CONNECTION ]] || [[ "$TERM" == "xterm-kitty" ]]; then 
   ZSH_THEME="powerlevel10k/powerlevel10k"
-else
-  ZSH_THEME="robbyrussell"
+# elif [[ "$TERM" == "xterm-kitty" ]]; then
+  # ZSH_THEME="powerlevel10k/powerlevel10k"
+else [[ -t 1 ]]
+  ZSH_THEME="geoffgarside"
 fi
 
 # Set list of themes to pick from when loading at random
@@ -149,4 +151,6 @@ alias cat='bat'
 export EDITOR=/usr/bin/nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# if [[ "$TERM" == "xterm-kitty" ]]; then
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# fi

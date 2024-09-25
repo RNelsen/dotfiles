@@ -24,7 +24,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-if [[ -n $SSH_CONNECTION ]] || [[ "$TERM" == "xterm-kitty" ]]; then 
+if [[ -n $SSH_CONNECTION ]] || [[ "$TERM" == "xterm-kitty" ]] || [[ "$TERM" == "xterm-256color" ]]; then 
   ZSH_THEME="powerlevel10k/powerlevel10k"
 # elif [[ "$TERM" == "xterm-kitty" ]]; then
   # ZSH_THEME="powerlevel10k/powerlevel10k"

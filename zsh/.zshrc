@@ -149,6 +149,8 @@ ZSH_THEME_TERM_TAB_TITLE_IDLE=""%n@%m:%~
 
 alias cat='bat'
 export EDITOR=/usr/bin/nvim
+alias cd='z'
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # if [[ "$TERM" == "xterm-kitty" ]]; then

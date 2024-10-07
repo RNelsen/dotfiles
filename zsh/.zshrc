@@ -92,8 +92,6 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
-
 plugins=(fzf zoxide)
 
 
@@ -158,3 +156,6 @@ alias cd='z'
 # if [[ "$TERM" == "xterm-kitty" ]]; then
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # fi
+
+# To customize prompt, run `p10k configure` or edit ~/dotfiles/zsh/.p10k.zsh.
+[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh

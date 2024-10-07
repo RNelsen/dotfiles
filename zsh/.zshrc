@@ -151,6 +151,7 @@ export EDITOR=/usr/bin/nvim
 export STATUSBAR=dwmblocks
 alias cd='z'
 
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # if [[ "$TERM" == "xterm-kitty" ]]; then
   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

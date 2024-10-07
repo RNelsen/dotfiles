@@ -148,7 +148,9 @@ ZSH_THEME_TERM_TAB_TITLE_IDLE=""%n@%m:%~
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cat='bat'
+alias rg="rg --hidden --glob '!.git'"
 export EDITOR=/usr/bin/nvim
+export STATUSBAR=dwmblocks
 alias cd='z'
 
 

@@ -21,3 +21,40 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+--Debugging
+-- vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+vim.fn.sign_define(
+  "DapBreakpoint",
+  { text = "🔵", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+)
+
+vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>", { desc = "Debugger Continue" })
+vim.keymap.set("n", "<F10>", ":lua require'dap'.step_over()<CR>", { desc = "Debugger Step Over" })
+vim.keymap.set("n", "<F11>", ":lua require'dap'.step_into()<CR>", { desc = "Debugger Step Into" })
+vim.keymap.set("n", "<F23>", ":lua require'dap'.step_out()<CR>", { desc = "Debugger Step Out" })
+vim.keymap.set("n", "<F17>", ":lua require'dap'.terminate()<CR>", { desc = "Debugger Stop" })
+-- vim.keymap.set('n', '<leader><F5>', ":lua require'dap'.terminate()<CR>", { desc = 'Debugger Stop' })
+-- vim.keymap.set('n', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", { desc = 'Toggle Breakpoint' })
+vim.keymap.set(
+  "n",
+  "<leader>b",
+  ":lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>",
+  { desc = "Toggle Breakpoint" }
+)
+-- vim.keymap.set('n', '<leader>B', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR>", { desc = 'Breakpoint Condition' })
+vim.keymap.set(
+  "n",
+  "<leader>B",
+  ":lua require('persistent-breakpoints.api').set_conditional_breakpoint()<cr>",
+  { desc = "Breakpoint Condition" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>BB",
+  ":lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>",
+  { desc = "Clear all breakpoints" }
+)
+vim.keymap.set("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { desc = "Restart debugger" })
+vim.keymap.set("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", { desc = "Open Dap UI" })
+vim.keymap.set("n", "<leader>dc", ":lua require('dapui').close()<CR>", { desc = "Close Dap UI" })

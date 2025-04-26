@@ -21,6 +21,7 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+<<<<<<< HEAD
 
 --Debugging
 -- vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = 'DapBreakpoint', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
@@ -58,3 +59,4 @@ vim.keymap.set(
 vim.keymap.set("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { desc = "Restart debugger" })
 vim.keymap.set("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", { desc = "Open Dap UI" })
 vim.keymap.set("n", "<leader>dc", ":lua require('dapui').close()<CR>", { desc = "Close Dap UI" })
+vim.keymap.set("n", "<leader>p", "<cmd>Precognition peek<CR>", { desc = "precognition toggle" })

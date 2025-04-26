@@ -6,6 +6,9 @@ return {
     animate.setup({
       scroll = {
         timing = animate.gen_timing.linear({ duration = 100, unit = "total" }),
+    require("mini.animate").setup({
+      scroll = {
+        enable = false,
       },
     })
   end,

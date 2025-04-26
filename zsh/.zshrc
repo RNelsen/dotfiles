@@ -32,6 +32,8 @@ else [[ -t 1 ]]
   ZSH_THEME="geoffgarside"
 fi
 
+# ZSH_THEME="geoffgarside"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -51,7 +53,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -148,8 +150,13 @@ ZSH_THEME_TERM_TAB_TITLE_IDLE=""%n@%m:%~
 alias cat='bat'
 export EDITOR=/usr/bin/nvim
 export STATUSBAR=dwmblocks
+<<<<<<< HEAD
 alias cd='z'
 export PS1
 export MANOPT="--nh --nj"
+=======
+# alias cd='z'
+
+>>>>>>> bf32af1a58a40555eff2b8995f7ee64b92f275ff
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
